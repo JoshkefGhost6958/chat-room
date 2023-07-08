@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block title %}
+<title>Chatter | Home</title>
+{% endblock %}
+{% block content %}
+<form method="post" id="form1">
+  <section>
+    <h1>Chat Room</h1>
+    <div id="join-a" style="padding: 3px; display:flex ;flex-direction: column;">
+      <label for="">Username</label>
+      <input type="text/javascript" id="" placeholder="enter name" name="name" value={{name}}> <br/>
+      <label>Room</label>
+      <input type="text/javascript" id="" placeholder="enter room code" name="room-id" value={{code}}><br/>  
+      <label style="font-size: 14px;display: none ;">PassKey</label>
+      <input style="display: none;" type="password" id="" placeholder="enter passKey" name="passkey">  
+    </div>
+    <div class="container-b">
+      <button id="join-room-btn" name="join" type="submit">Join room</button>
+    </div>
+    <div class="container-b">
+      <button id="create-room-btn" name="create" type="submit">Create room</button>
+    </div>
+    <div class="error">
+      {% for err in error %}
+      <li>{{ err }}*</li>
+      {% endfor %}
+    </div>
+
+  </section>
+</form>
+{% endblock %}
